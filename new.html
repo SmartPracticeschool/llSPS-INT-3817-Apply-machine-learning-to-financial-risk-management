@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top:35%;
+}
+</style>
+</head>
+
+<body style="background: url(https://www.master-of-finance.org/wp-content/uploads/2014/03/accounting-2-300x200.jpg); background-size: 100% 100%;">
+
+ <div class="login">
+ 
+ 	<h1 style="color:#0c0d0d;">
+ 	Financial Risk Prediction
+ 	</h1>
+ 	
+ 	<a href = "/"><button type="submit" class="btn" formtarget="_top" >Back</button></a>
+ 	
+ 	<p style="color:black;"><small>Financial institutions need to continually weigh the risks of their transactions, 
+ 	and they determine their risk level through credit scoring. Leading up to the 2008-09 financial 
+ 	crisis, almost all large banks used credit scoring models based on statistical theories; 
+ 	that crisis, largely brought about by underestimating risk, proved the need for better accuracy 
+ 	in their scoring. The combination of increased requirements and the development of advanced new 
+ 	technologies has given rise to a new era: credit scoring using machine learning.</small></p>
+
+
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+

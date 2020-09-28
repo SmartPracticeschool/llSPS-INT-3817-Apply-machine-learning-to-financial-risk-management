@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top:35%;
+}
+</style>
+</head>
+
+<body style="background: url(https://www.master-of-finance.org/wp-content/uploads/2014/03/accounting-2-300x200.jpg); background-size: 100% 100%;">
+
+ <div class="login">
+ 
+    <form action="{{ url_for('more_info')}}"method="get">
+ 	<button type="submit" class=" btn " formtarget="_top" >More Info</button>
+ 	</form>
+ 
+ 	<h2 style="color:#0c0d0d;">
+ 	Financial Risk Prediction
+ 	</h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+    
+    
+<input type="number" name="Age" placeholder="Age" required="required" />
+</select>
+    	<select name="Sex" required="Sex">
+        	<option value="">Select Sex</option>
+        	<option value="female">female</option>
+        	<option value="male">male</option>
+        	
+        </select>
+    	 <input type="number" name="job" placeholder="job" required="required" />
+    	 </select>
+
+		<select name="Housing" required="required">
+		
+    		<option value="">Housing  </option>
+    		
+    		<option value="rent">rent</option>
+    		<option value="UNK">UNK</option>
+    		<option value="free">free</option>
+    		<option value="own">own</option>
+
+    	
+    </select>
+    	
+    	<select name="Saving accounts" required="required">
+    	
+        	<option value="">Saving accounts </option>
+        	
+        	<option value="moderate">moderate </option>     
+        	<option value="little">little</option>
+        	<option value="rich">rich</option>    
+        	<option value="quite rich">quite rich</option>   
+        	<option value="UNK">UNK</option>  
+        	
+    	
+    	</select>
+    	
+    	<select name="Checking account" required="required">
+        	
+        	<option value="">Checking account  </option>
+        	
+      <option value="moderate">moderate </option>     
+        	<option value="little">little</option>
+        	<option value="rich">rich</option>    
+        	<option value="quite rich">quite rich</option>   
+        	<option value="UNK">UNK</option>       
+        	
+        	</select>
+        	
+       
+        
+
+        <input type="number" name="Credit amount" placeholder="Credit amount" required="required" />
+        
+        <input type="number" name="Duration" placeholder="Duration" required="required" />
+
+        
+
+        	
+   
+        	
+    	</select>
+    	
+    
+        	
+          
+    	
+    	<select name="Purpose" required="required">
+        	
+        	<option value="">Purpose  </option>
+        	
+        	<option value="business">business </option>    
+           	<option value="car">car</option>   
+        	<option value="domestic appliances">domestic appliances </option>   
+        	<option value="education">education</option>  
+        	<option value="furniture/equipment">furniture/equipment </option>   
+        	<option value="radio/TV">radio/TV</option> 
+        	<option value="repairs">repairs </option>   
+        	<option value="vacation/others">vacation/others</option>     
+        	
+    
+
+    	</select>
+
+
+		
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large" formtarget="_top" >Predict</button>
+    
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
